@@ -1,5 +1,10 @@
 import React from 'react'
 import { hydrate } from 'react-dom'
-import Home from '../share/pages'
+import { BrowserRouter } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
+import routes from '../share/routes'
 
-hydrate(<Home />, document.getElementById('root'))
+hydrate(
+  <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>,
+  document.getElementById('root')
+)
