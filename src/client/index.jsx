@@ -5,6 +5,6 @@ import { renderRoutes } from 'react-router-config'
 import routes from '../share/routes'
 
 hydrate(
-  <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>,
+  <BrowserRouter>{renderRoutes(routes, window.INITIAL_PROPS)}</BrowserRouter>,
   document.getElementById('root')
 )

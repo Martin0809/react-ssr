@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Index() {
+export default function Index({ title }) {
   return (
     <div onClick={() => console.log('Home Page')}>
       <ul>
@@ -12,7 +12,15 @@ export default function Index() {
           <Link to="/list">List</Link>
         </li>
       </ul>
-      Home Page
+      {title}
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      title: 'Home Page',
+    },
+  }
 }

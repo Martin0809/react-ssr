@@ -1,15 +1,17 @@
-import Home from './pages'
-import List from './pages/list'
+import * as Home from './pages'
+import * as List from './pages/list'
 
 export default [
   {
     path: '/',
-    component: Home,
     exact: true,
+    component: Home.default,
+    ...Home,
   },
   {
     path: '/list',
-    component: List,
     exact: true,
+    component: List.default,
+    ...List,
   },
 ]
